@@ -83,7 +83,8 @@ nav {
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--text); }
-.nav-cta {
+.nav-actions { display: flex; gap: 14px; align-items: center; }
+.nav-cta, .nav-resume-btn {
   background: var(--white);
   color: var(--text);
   padding: 8px 20px;
@@ -94,11 +95,32 @@ nav {
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
-.nav-cta:hover { 
+.nav-cta:hover, .nav-resume-btn:hover { 
   background: var(--white);
   transform: scale(1.05);
   box-shadow: 0 4px 16px rgba(46, 107, 110, 0.2);
+}
+.nav-resume-btn {
+  background: var(--teal);
+  color: #fff;
+  padding: 10px 20px;
+}
+.nav-resume-btn:hover {
+  background: var(--teal);
+  opacity: 0.86;
+}
+
+/* Download icon in button */
+.resume-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ── THEME TOGGLE BUTTON ── */
@@ -964,6 +986,7 @@ footer {
 @media (max-width: 960px) {
   nav { padding: 0 24px; }
   .nav-links { gap: 18px; }
+  .nav-actions { gap: 10px; }
   .hero-inner { flex-direction: column; padding: 60px 24px; gap: 40px; }
   .hero-photo-wrap { width: 200px; }
   .stats-inner { grid-template-columns: repeat(2, 1fr); padding: 0 24px 48px; }
@@ -979,7 +1002,7 @@ footer {
 }
 
 @media (max-width: 600px) {
-  .nav-cta { display: none; }
+  .nav-cta, .nav-resume-btn { display: none; }
   .stats-inner { grid-template-columns: 1fr; }
   .domains-grid-3col { grid-template-columns: 1fr 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
@@ -1002,6 +1025,16 @@ footer {
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
     <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-actions">
+    <a href="Sivaraj_Resume_UX.docx" download class="nav-resume-btn" title="Download Resume">
+      <svg class="resume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Resume
+    </a>
     <button class="nav-cta" id="contactModalBtn" title="Get in touch">Hire Me</button>
     <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">
       <svg id="sunIcon" viewBox="0 0 24 24" style="display: block;">
@@ -1710,7 +1743,7 @@ footer {
   </div>
   <div class="wa-popup-bubble">👋 Hi there! Let's connect.</div>
   <a class="wa-popup-btn" href="https://wa.me/919840465309?text=Hi%20Sivaraj%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect!" target="_blank">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.847L.057 23.492a.5.5 0 0 0 .614.636l5.796-1.52A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.5-5.24-1.375l-.376-.217-3.9 1.023 1.04-3.793-.237-.389A9.944 9.944 0 0 1 2 12C2 6.478 6.478 2 12 2s10 4.478 10 10-4.478 10-10 10z"/></svg>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.847L.057 23.492a.5.5 0 00.614.636l5.796-1.52A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.5-5.24-1.375l-.376-.217-3.9 1.023 1.04-3.793-.237-.389A9.944 9.944 0 012 12C2 6.478 6.478 2 12 2s10 4.478 10 10-4.478 10-10 10z"/></svg>
     Start Chat on WhatsApp
   </a>
 </div>
